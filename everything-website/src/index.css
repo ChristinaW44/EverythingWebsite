@@ -1,65 +1,74 @@
+:root{
+  --darkGreen: hsl(109, 33%, 37%);
+  --mediumGreen: hsl(109, 33%, 85%);
+  --lightGreen: hsl(109, 33%, 95%)
+}
+
+body{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 /* Navbar styling */
 .nav-container{
-  display: flex;
-  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 1000;
 }
 
 .navbar {
+  display: flex;
   text-align: justify;
-  width: 85%;
-  max-width: 600px;
-  background-color: hsl(109, 33%, 95%);
+  width: 100%;
+  background-color: var(--lightGreen);
   padding: 0px;
-  border: none;
-  border-radius: 20px;
-  box-shadow: 5px 5px 5px lightgray;
+  margin: 0;
+  justify-content: space-around;
 }
 
 .navbar button{
-  width: 33.333333%;
   background: none;
   border: none;
-  padding: 10px 0px;
+  padding: 10px;
   font-family:system-ui;
   font-weight: bold;
-  color: hsl(105, 23%, 37%) ;
-}
-
-
-.nav-left{
-  border-radius: 20px 0px 0px 20px;
-}
-
-.nav-right{
-  border-radius: 0px 20px 20px 0px;
+  font-size: 1.5rem;
+  color: var(--darkGreen) ;
 }
 
 .navbar button:hover{
-  background-color: hsl(109, 33%, 85%);
+  background-color: var(--mediumGreen);
 }
 
 /* Jobs Page styling */
 
-.card-container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.jobs-navbar{
+  display: block;
+  position: fixed;
+  left: 0;
+  height: 100%;
+  background-color: var(--mediumGreen);
+  width: 20%;
+  color: var(--darkGreen);
+  font-family: system-ui;
 }
 
-.card{
-  border: 2px solid hsl(109, 33%, 85%);
-  border-radius: 20px;
-  margin: 10px;
-  box-shadow: 5px 5px 5px lightgray;
-  width: 15%;
-  height: 200px;
+.jobs-navbar button{
+  display: block;
+  align-self: center;
+  width: 100%;
+  border: none;
+  background:none;
+  color: var(--darkGreen);
+  padding: 10px;
 }
 
-.card-link{
-  text-decoration: none;
-  color: hsl(105, 23%, 37%);
-}
-
-.card:hover{
-  background-color: hsl(109, 33%, 95%);
+.jobs-navbar button:hover{
+  background-color: var(--darkGreen);
+  color: black;
 }

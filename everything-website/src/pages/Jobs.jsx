@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Card } from "../components/Card";
 
 export function Jobs(){
@@ -12,18 +13,41 @@ export function Jobs(){
                     {id:4, heading:"Principles", description: ""},
                     {id:5, heading:"Databases", description:""}];
 
+    const technicalTopics = ["OOP", "Methodologies", "Principles", "Databases"];
+    const [content, setContent] = useState("1");
+
+    function handleTopicClicked(index){
+        switch (index){
+            case 0:
+                setContent("0");
+                break;
+            case 1:
+                setContent("1");
+                break;
+            case 2:
+                setContent("2");
+                break;
+            case 3:
+                setContent("3");
+        }
+    }
+    
     return(
         <div>
-            <h2>General Interview Questions</h2>
-            <div className="card-container">
-                {generalCards.map((card) => (
-                    <Card id={card.id} heading={card.heading} description={card.description}/>))}        
+            <div className="jobs-navbar">
+                <h3>General</h3>
+                <button>Practice</button>
+                <button>Questions</button>
+                <br/>
+                <h3>Technical</h3>
+                <button>Practice</button>
+                {technicalTopics.map((topic, index) => 
+                    <button key= {index} onClick={() => handleTopicClicked(index)}>
+                        {topic}
+                    </button>
+                )}
             </div>
-            <h2>Technical Questions</h2>
-            <div className="card-container">
-                {technicalCards.map((card) => (
-                    <Card id={card.id} heading={card.heading} description={card.description}/>))}        
-            </div>
+            {content}
         </div>);
         
 }

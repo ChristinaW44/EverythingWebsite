@@ -5,6 +5,7 @@ export function Layout(){
 
     return(<>
         <Navbar/>
+        <br/>
         <main>
             <Outlet/>
         </main>

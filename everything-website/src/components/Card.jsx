@@ -6,7 +6,7 @@ export function Card(props){
             <div key={props.id} className="card">
                 <Link to="/" className="card-link">
                     <div className="card-link">
-                        <h2>{props.heading}</h2>
+                        <h3>{props.heading}</h3>
                         <p>{props.description}</p>
                     </div>
                 </Link>
